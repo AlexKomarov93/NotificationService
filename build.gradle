@@ -45,8 +45,12 @@ dependencies {
 	// Утилиты для тестирования логики Kafka (позволяет поднимать тестовый встроенный брокер EmbeddedKafka)
 	testImplementation 'org.springframework.boot:spring-boot-starter-kafka-test'
 
+	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+
 	// Поддержка тестирования и проверки выполнения скриптов миграций Liquibase
 	testImplementation 'org.springframework.boot:spring-boot-starter-liquibase-test'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	// Подключение Lombok исключительно для использования его аннотаций внутри папки с тестами
 	testCompileOnly 'org.projectlombok:lombok'

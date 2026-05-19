@@ -18,20 +18,46 @@ repositories {
 }
 
 dependencies {
+	// Работа с базой данных MySQL через Hibernate и JPA (репозитории, сущности)
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Интеграция с брокером сообщений Apache Kafka (для создания Consumer/слушателя топиков)
 	implementation 'org.springframework.boot:spring-boot-starter-kafka'
+
+	// Управление миграциями базы данных (автоматическое создание таблицы orders через SQL-скрипты)
 	implementation 'org.springframework.boot:spring-boot-starter-liquibase'
+
+	// Создание REST API эндпоинтов (контроллеры, обработка HTTP-запросов GET/POST)
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Библиотека Lombok для генерации кода (геттеры, сеттеры, билдеры) во время компиляции
 	compileOnly 'org.projectlombok:lombok'
+
+	// Официальный JDBC-драйвер для подключения Spring Boot к СУБД MySQL
 	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	// Процессор аннотаций Lombok для его корректной сборки компилятором Java
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// Инструменты тестирования слоя данных (автоматически включает встроенную базу данных для тестов репозиториев)
 	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
+
+	// Утилиты для тестирования логики Kafka (позволяет поднимать тестовый встроенный брокер EmbeddedKafka)
 	testImplementation 'org.springframework.boot:spring-boot-starter-kafka-test'
+
+	// Поддержка тестирования и проверки выполнения скриптов миграций Liquibase
 	testImplementation 'org.springframework.boot:spring-boot-starter-liquibase-test'
+
+	// Подключение Lombok исключительно для использования его аннотаций внутри папки с тестами
 	testCompileOnly 'org.projectlombok:lombok'
+
+	// Движок запуска тестов JUnit 5 в современных версиях Gradle и IntelliJ IDEA
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Процессор аннотаций Lombok для генерации кода билдеров внутри тестовых классов
 	testAnnotationProcessor 'org.projectlombok:lombok'
 }
+
 
 tasks.named('test') {
 	useJUnitPlatform()

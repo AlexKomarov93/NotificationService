@@ -30,10 +30,7 @@ public class OrderReadController {
     public List<NotificationOrder> getAllProductsByUserId(@RequestParam("userId") Long userId) {
         return orderNotificationService.getAllProductsByUser(userId);
     }
-
 }
-
-
 
 
 
